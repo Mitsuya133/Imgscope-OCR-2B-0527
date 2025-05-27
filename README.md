@@ -33,7 +33,7 @@ Colab Demo : https://huggingface.co/prithivMLmods/Imgscope-OCR-2B-0527/blob/main
 
 ### Demo Video Inference
 
-https://github.com/user-attachments/assets/b5689a22-497f-41a9-9cc4-44a4bfe7abd0
+https://github.com/user-attachments/assets/3ca9ef10-8a71-4cd1-8be1-951a9f6d5a00
 
 ```
 
