@@ -36,18 +36,25 @@ Colab Demo : https://huggingface.co/prithivMLmods/Imgscope-OCR-2B-0527/blob/main
 https://github.com/user-attachments/assets/b5689a22-497f-41a9-9cc4-44a4bfe7abd0
 
 ```
-<|im_start|>assistant
-This image appears to be from an advertisement for Pringles potato chips, featuring several scenes that illustrate various situations where people enjoy their snacks while in different settings.
 
-In one scene, we see a group of friends gathered around a table with pizza and soda cans on it. One person is holding a Pringle can, indicating they might be eating or enjoying them at this moment.
+The video starts with a group of people gathered around a table filled with snacks and drinks, indicating a casual social gathering. One person is seen holding a can of Pringles, suggesting that the snack is being enjoyed by the attendees.
 
-Another scene shows two individuals sitting at a restaurant booth, laughing together as they eat something out of a Pringle can.
+As the scene progresses, the focus shifts to a man who is seen pouring a drink from a can into a glass. This action implies that the drink is being served or shared among the group.
 
-A third scene features a bride and groom exchanging gifts during what looks like a wedding ceremony, with one individual holding up a Pringle can.
+The next scene shows a different setting where a man is walking down a hallway while holding a can of Pringles. This could indicate that he is on his way to join the group or has just arrived at the location.
 
-Finally, there's another shot showing a funeral service, with someone pouring a drink into a cup held by a loved one who has passed away. This could also imply that the person is drinking a beverage associated with Pringles, such as Pepsi Cola.
+The following scene takes place in a diner where two people are seated at a booth. The man is seen holding a can of Pringles, which suggests that they might be enjoying a meal together.
 
-Overall, these images depict people engaging with Pringles products in various social contexts, emphasizing their versatility across different environments and occasions.<|im_end|>
+The video then transitions to a wedding ceremony where a man is feeding a woman a piece of cake using a can of Pringles. This unusual gesture adds a humorous element to the otherwise traditional event.
+
+Next, the scene changes to a bedroom where a man is seen feeding a woman a piece of cake using a can of Pringles. This scene further emphasizes the playful nature of the video.
+
+The video then shifts to an office setting where a man is seen working at a desk. The presence of a can of Pringles on the desk suggests that it might be part of his workspace or a snack during work hours.
+
+Finally, the video ends with a scene of a funeral where a woman is seen crying over a casket. The presence of a can of Pringles on the casket adds an unexpected and humorous touch to the solemn occasion.
+
+Throughout the video, the recurring theme of Pringles is evident, with various scenes featuring the snack as a central element. The video concludes with the text "GET STUCK IN," encouraging viewers to enjoy the snack and engage with the content.
+
 ```
 
 ### How to Use
