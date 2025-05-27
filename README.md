@@ -31,6 +31,25 @@ Colab Demo : https://huggingface.co/prithivMLmods/Imgscope-OCR-2B-0527/blob/main
 
 ---
 
+### Demo Video Inference
+
+https://github.com/user-attachments/assets/b5689a22-497f-41a9-9cc4-44a4bfe7abd0
+
+```
+<|im_start|>assistant
+This image appears to be from an advertisement for Pringles potato chips, featuring several scenes that illustrate various situations where people enjoy their snacks while in different settings.
+
+In one scene, we see a group of friends gathered around a table with pizza and soda cans on it. One person is holding a Pringle can, indicating they might be eating or enjoying them at this moment.
+
+Another scene shows two individuals sitting at a restaurant booth, laughing together as they eat something out of a Pringle can.
+
+A third scene features a bride and groom exchanging gifts during what looks like a wedding ceremony, with one individual holding up a Pringle can.
+
+Finally, there's another shot showing a funeral service, with someone pouring a drink into a cup held by a loved one who has passed away. This could also imply that the person is drinking a beverage associated with Pringles, such as Pepsi Cola.
+
+Overall, these images depict people engaging with Pringles products in various social contexts, emphasizing their versatility across different environments and occasions.<|im_end|>
+```
+
 ### How to Use
 
 ```python
