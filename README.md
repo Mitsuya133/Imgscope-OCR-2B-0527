@@ -39,21 +39,21 @@ from qwen_vl_utils import process_vision_info
 
 # Load the model
 model = Qwen2VLForConditionalGeneration.from_pretrained(
-    "prithivMLmods/Callisto-OCR3-2B-Instruct",  # replace with updated model ID if available
+    "prithivMLmods/Imgscope-OCR-2B-0527",  # replace with updated model ID if available
     torch_dtype="auto",
     device_map="auto"
 )
 
 # Optional: Flash Attention for performance optimization
 # model = Qwen2VLForConditionalGeneration.from_pretrained(
-#     "prithivMLmods/Callisto-OCR3-2B-Instruct",
+#     "prithivMLmods/Imgscope-OCR-2B-0527",
 #     torch_dtype=torch.bfloat16,
 #     attn_implementation="flash_attention_2",
 #     device_map="auto",
 # )
 
 # Load processor
-processor = AutoProcessor.from_pretrained("prithivMLmods/Callisto-OCR3-2B-Instruct")
+processor = AutoProcessor.from_pretrained("prithivMLmods/Imgscope-OCR-2B-0527")
 
 messages = [
     {
