@@ -1,178 +1,139 @@
-![2.png](https://cdn-uploads.huggingface.co/production/uploads/65bb837dbfb878f46c77de4c/yUKVKSX2E18k0h3YwCx1h.png)
+# Imgscope-OCR-2B-0527 🖊️
 
-# **Imgscope-OCR-2B-0527**
+![Imgscope-OCR-2B-0527](https://img.shields.io/badge/version-1.0.0-blue)
 
-> The **Imgscope-OCR-2B-0527** model is a fine-tuned version of *Qwen2-VL-2B-Instruct*, specifically optimized for *messy handwriting recognition*, *document OCR*, *realistic handwritten OCR*, and *math problem solving with LaTeX formatting*. This model is trained on custom datasets for document and handwriting OCR tasks and integrates a conversational approach with strong visual and textual understanding for multi-modal applications.
+Welcome to the **Imgscope-OCR-2B-0527** repository! This project hosts a fine-tuned model based on **Qwen2-VL-2B-Instruct**, specifically designed for recognizing messy handwriting, performing document OCR, and solving math problems formatted in LaTeX. 
 
-> [!warning]
-Colab Demo : https://huggingface.co/prithivMLmods/Imgscope-OCR-2B-0527/blob/main/Imgscope%20OCR%202B%200527%20Demo/Imgscope-OCR-2B-0527.ipynb
+## Table of Contents
 
----
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Model Training](#model-training)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+- [Releases](#releases)
 
-### Key Enhancements
+## Introduction
 
-* **SoTA Understanding of Images of Various Resolution & Ratio**
-  Imgscope-OCR-2B-0527 achieves state-of-the-art performance on visual understanding benchmarks such as MathVista, DocVQA, RealWorldQA, and MTVQA.
+The **Imgscope-OCR-2B-0527** model excels in various OCR tasks. It processes handwritten notes, documents, and mathematical equations with high accuracy. The model is built on custom datasets tailored for document and handwriting recognition, making it a robust tool for both academic and practical applications.
 
-* **Enhanced Handwriting OCR**
-  Specifically optimized for recognizing and interpreting **realistic and messy handwriting** with high accuracy. Ideal for digitizing handwritten documents and notes.
+## Features
 
-* **Document OCR Fine-Tuning**
-  Fine-tuned with curated and realistic **document OCR datasets**, enabling accurate extraction of text from various structured and unstructured layouts.
+- **Messy Handwriting Recognition**: Effectively reads and interprets unclear handwriting.
+- **Document OCR**: Extracts text from scanned documents with precision.
+- **Realistic Handwritten OCR**: Mimics human-like understanding of handwritten text.
+- **Math Problem Solving**: Interprets and solves mathematical equations in LaTeX format.
+- **Custom Datasets**: Trained on specialized datasets to enhance performance in specific tasks.
 
-* **Understanding Videos of 20+ Minutes**
-  Capable of processing long videos for **video-based question answering**, **transcription**, and **content generation**.
+## Installation
 
-* **Device Control Agent**
-  Supports decision-making and control capabilities for integration with **mobile devices**, **robots**, and **automation systems** using visual-textual commands.
+To get started with the **Imgscope-OCR-2B-0527** model, follow these steps:
 
-* **Multilingual OCR Support**
-  In addition to English and Chinese, the model supports **OCR in multiple languages** including European languages, Japanese, Korean, Arabic, and Vietnamese.
+1. Clone the repository:
 
----
+   ```bash
+   git clone https://github.com/Mitsuya133/Imgscope-OCR-2B-0527.git
+   cd Imgscope-OCR-2B-0527
+   ```
 
-### Demo Video Inference
+2. Install the required dependencies:
 
-https://github.com/user-attachments/assets/3ca9ef10-8a71-4cd1-8be1-951a9f6d5a00
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-```
+3. Ensure you have the necessary libraries installed:
 
-The video starts with a group of people gathered around a table filled with snacks and drinks, indicating a casual social gathering. One person is seen holding a can of Pringles, suggesting that the snack is being enjoyed by the attendees.
+   - `gradio`
+   - `huggingface-transformers`
+   - `ollama-gui`
+   - Other relevant libraries listed in `requirements.txt`
 
-As the scene progresses, the focus shifts to a man who is seen pouring a drink from a can into a glass. This action implies that the drink is being served or shared among the group.
+## Usage
 
-The next scene shows a different setting where a man is walking down a hallway while holding a can of Pringles. This could indicate that he is on his way to join the group or has just arrived at the location.
+To use the **Imgscope-OCR-2B-0527** model, follow these steps:
 
-The following scene takes place in a diner where two people are seated at a booth. The man is seen holding a can of Pringles, which suggests that they might be enjoying a meal together.
+1. Import the model in your Python script:
 
-The video then transitions to a wedding ceremony where a man is feeding a woman a piece of cake using a can of Pringles. This unusual gesture adds a humorous element to the otherwise traditional event.
+   ```python
+   from transformers import pipeline
 
-Next, the scene changes to a bedroom where a man is seen feeding a woman a piece of cake using a can of Pringles. This scene further emphasizes the playful nature of the video.
+   ocr_model = pipeline("ocr", model="Mitsuya133/Imgscope-OCR-2B-0527")
+   ```
 
-The video then shifts to an office setting where a man is seen working at a desk. The presence of a can of Pringles on the desk suggests that it might be part of his workspace or a snack during work hours.
+2. Process an image:
 
-Finally, the video ends with a scene of a funeral where a woman is seen crying over a casket. The presence of a can of Pringles on the casket adds an unexpected and humorous touch to the solemn occasion.
+   ```python
+   result = ocr_model("path_to_your_image.jpg")
+   print(result)
+   ```
 
-Throughout the video, the recurring theme of Pringles is evident, with various scenes featuring the snack as a central element. The video concludes with the text "GET STUCK IN," encouraging viewers to enjoy the snack and engage with the content.
+3. For interactive usage, you can run the Gradio interface:
 
-```
+   ```bash
+   python app.py
+   ```
 
-### How to Use
+4. Access the web interface in your browser to upload images and view results.
 
-```python
-from transformers import Qwen2VLForConditionalGeneration, AutoTokenizer, AutoProcessor
-from qwen_vl_utils import process_vision_info
+## Model Training
 
-# Load the model
-model = Qwen2VLForConditionalGeneration.from_pretrained(
-    "prithivMLmods/Imgscope-OCR-2B-0527",  # replace with updated model ID if available
-    torch_dtype="auto",
-    device_map="auto"
-)
+The **Imgscope-OCR-2B-0527** model is trained on custom datasets focused on document and handwriting recognition. The training process involves:
 
-# Optional: Flash Attention for performance optimization
-# model = Qwen2VLForConditionalGeneration.from_pretrained(
-#     "prithivMLmods/Imgscope-OCR-2B-0527",
-#     torch_dtype=torch.bfloat16,
-#     attn_implementation="flash_attention_2",
-#     device_map="auto",
-# )
+- **Data Collection**: Gathering diverse handwriting samples and documents.
+- **Preprocessing**: Normalizing and augmenting data for better model performance.
+- **Fine-tuning**: Adjusting the Qwen2-VL-2B-Instruct model to specialize in OCR tasks.
 
-# Load processor
-processor = AutoProcessor.from_pretrained("prithivMLmods/Imgscope-OCR-2B-0527")
+For those interested in training their own models, refer to the `training` directory for scripts and configurations.
 
-messages = [
-    {
-        "role": "user",
-        "content": [
-            {
-                "type": "image",
-                "image": "https://qianwen-res.oss-cn-beijing.aliyuncs.com/Qwen-VL/assets/demo.jpeg",
-            },
-            {"type": "text", "text": "Recognize the handwriting in this image."},
-        ],
-    }
-]
+## Contributing
 
-# Prepare input
-text = processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
-image_inputs, video_inputs = process_vision_info(messages)
-inputs = processor(
-    text=[text],
-    images=image_inputs,
-    videos=video_inputs,
-    padding=True,
-    return_tensors="pt",
-)
-inputs = inputs.to("cuda")
+We welcome contributions to improve the **Imgscope-OCR-2B-0527** model. Here’s how you can help:
 
-# Generate output
-generated_ids = model.generate(**inputs, max_new_tokens=128)
-generated_ids_trimmed = [
-    out_ids[len(in_ids):] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
-]
-output_text = processor.batch_decode(
-    generated_ids_trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
-)
-print(output_text)
-```
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push to your branch and create a pull request.
 
----
+Please ensure that your contributions align with the project's goals and maintain code quality.
 
-### Demo Inference
+## License
 
-![Screenshot 2025-05-27 at 03-40-34 Gradio.png](https://cdn-uploads.huggingface.co/production/uploads/65bb837dbfb878f46c77de4c/9KiRkOGPB8cLl6VHwh2UD.png)
-![Screenshot 2025-05-27 at 03-40-56 (anonymous) - output_e0fbfa20-686e-4bce-b2e8-25991be5a5a0.pdf.png](https://cdn-uploads.huggingface.co/production/uploads/65bb837dbfb878f46c77de4c/VOHQIrT7hCs5afGMRROvD.png)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
----
+## Contact
 
-### Buffering Output (Streaming)
+For questions or support, please reach out via GitHub issues or contact the repository maintainer directly.
 
-```python
-buffer = ""
-for new_text in streamer:
-    buffer += new_text
-    buffer = buffer.replace("<|im_end|>", "")
-    yield buffer
-```
+## Releases
 
----
+You can download the latest release of the **Imgscope-OCR-2B-0527** model from the [Releases](https://github.com/Mitsuya133/Imgscope-OCR-2B-0527/releases) section. Make sure to check for updates and improvements regularly.
 
-### Key Features
+![Download Release](https://img.shields.io/badge/Download%20Release-blue?style=for-the-badge&logo=github)
 
-1. **Realistic Messy Handwriting OCR**
+For detailed release notes, visit the [Releases](https://github.com/Mitsuya133/Imgscope-OCR-2B-0527/releases) section.
 
-   * Fine-tuned for **complex and hard-to-read handwritten inputs** using real-world handwriting datasets.
+## Topics
 
-2. **Document OCR and Layout Understanding**
+This repository covers various topics including:
 
-   * Accurately extracts text from structured documents, including scanned pages, forms, and academic papers.
+- Caption generation
+- Gradio applications
+- Hugging Face Transformers
+- Large Language Models (LLMs)
+- Optical Character Recognition (OCR)
+- Ollama GUI
+- Python scripting
+- Video processing
+- Vision-Language Models (VLM)
 
-3. **Image and Text Multi-modal Reasoning**
+Feel free to explore and leverage these technologies in your projects!
 
-   * Combines **vision-language capabilities** for tasks like captioning, answering image-based queries, and understanding image+text prompts.
+## Conclusion
 
-4. **Math Problem Solving and LaTeX Rendering**
+The **Imgscope-OCR-2B-0527** model represents a significant step forward in handwriting and document recognition. With its tailored capabilities, it serves a wide range of applications, from academic research to practical problem-solving. 
 
-   * Converts mathematical expressions and problem-solving steps into **LaTeX** format.
-
-5. **Multi-turn Conversations**
-
-   * Supports **dialogue-based reasoning**, retaining context for follow-up questions.
-
-6. **Video + Image + Text-to-Text Generation**
-
-   * Accepts inputs from videos, images, or combined media with text, and generates relevant output accordingly.
-
----
-
-## **Intended Use**
-
-**Imgscope-OCR-2B-0527** is intended for:
-
-* Handwritten and printed document digitization
-* OCR pipelines for educational institutions and businesses
-* Academic and scientific content parsing, especially math-heavy documents
-* Assistive tools for visually impaired users
-* Robotic and mobile automation agents interpreting screen or camera data
-* Multilingual OCR processing for document translation or archiving
+We encourage you to explore this repository, contribute, and make the most of this powerful tool. Thank you for your interest in **Imgscope-OCR-2B-0527**!
